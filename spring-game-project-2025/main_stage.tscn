@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://1da2fmhqu116"]
+[gd_scene load_steps=6 format=3 uid="uid://1da2fmhqu116"]
 
 [ext_resource type="Script" uid="uid://bnwoadkaci7oj" path="res://main_stage.gd" id="1_gh3nl"]
 [ext_resource type="PackedScene" uid="uid://wnv0pgenighl" path="res://player.tscn" id="1_lq8q1"]
 [ext_resource type="AudioStream" uid="uid://c0nd3hdih0p8e" path="res://soundtrack/MogueraTheme.ogg" id="3_uwveg"]
+[ext_resource type="AudioStream" uid="uid://wod1he3xp1mq" path="res://soundtrack/GezoraTheme.ogg" id="4_uwveg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4owyp"]
 size = Vector2(546, 108)
@@ -25,7 +26,12 @@ shape = SubResource("RectangleShape2D_4owyp")
 [node name="Player" parent="." instance=ExtResource("1_lq8q1")]
 position = Vector2(519, 145)
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="MainTrack" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(564, 288)
 stream = ExtResource("3_uwveg")
+bus = &"Music"
+
+[node name="AltTrack" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(564, 288)
+stream = ExtResource("4_uwveg")
 bus = &"Music"
