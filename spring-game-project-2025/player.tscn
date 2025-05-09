@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://wnv0pgenighl"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_0sm4r"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x2q2d"]
+radius = 38.0526
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_0sm4r")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(-370, -163)
+polygon = PackedVector2Array(345, 155, 372, 129, 400, 142, 402, 162, 389, 187, 353, 189, 333, 177, 337, 158)
+
+[node name="Hitbox" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_x2q2d")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(1.90735e-06, 1)
+scale = Vector2(1.85, 1)
+
+[node name="Label" type="Label" parent="."]
+offset_left = -30.0
+offset_top = -75.0
+offset_right = 29.0
+offset_bottom = -52.0
+text = "Stocks: "
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
