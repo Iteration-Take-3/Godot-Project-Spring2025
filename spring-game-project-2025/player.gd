@@ -32,6 +32,8 @@ func _physics_process(delta: float) -> void:
 			djump = false
 			velocity.y = 0
 			velocity.y -= jump_height
+	if Input.is_action_just_released("W") && velocity.y <= 0:
+		velocity.y -= velocity.y/2
 	
 	if stocks < 1:
 		get_tree().quit()
