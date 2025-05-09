@@ -7,7 +7,7 @@ const gravity_cap = 10000
 
 var stocks = 3
 var djump = true;
-var canmove = true;
+var onledge = false;
 
 func _ready() -> void:
 	$Label.text = "Stocks: " + str(stocks)
@@ -20,14 +20,14 @@ func _physics_process(delta: float) -> void:
 		velocity.y += gravity * delta
 	
 	if Input.is_action_pressed("Right"):
-		if (canmove):
+		if (not onledge):
 			velocity.x += speed
 	if Input.is_action_pressed("Left"):
-		if (canmove):
+		if (not onledge):
 			velocity.x -= speed;
 	
 	if Input.is_action_just_pressed("Jump"):
-		canmove = true;
+		onledge = false;
 		gravity = 750;
 		if is_on_floor():
 			velocity.y = 0
@@ -44,7 +44,7 @@ func _physics_process(delta: float) -> void:
 		get_tree().quit()
 		
 	if Input.is_action_just_pressed("Down") && not is_on_floor():
-		canmove = true;
+		onledge = false;
 		gravity = 750;
 		velocity.y = 750;
 		

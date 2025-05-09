@@ -9,4 +9,4 @@ func _on_area_entered(area: Area2D) -> void:
 		area.get_parent().velocity.x = 0;
 		area.get_parent().velocity.y = 0;
 		area.get_parent().djump = true;
-		area.get_parent().canmove = false;
+		area.get_parent().onledge = true;
