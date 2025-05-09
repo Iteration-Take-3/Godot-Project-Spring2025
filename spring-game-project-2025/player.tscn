@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://c1xpgn357sf1o" path="res://player.gd" id="1_0sm4r"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_x2q2d"]
-radius = 38.0526
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4flbx"]
+size = Vector2(60, 60)
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_0sm4r")
@@ -13,15 +13,9 @@ position = Vector2(-370, -163)
 polygon = PackedVector2Array(345, 155, 372, 129, 400, 142, 402, 162, 389, 187, 353, 189, 333, 177, 337, 158)
 
 [node name="Collision" type="CollisionShape2D" parent="."]
-visible = false
-shape = SubResource("CircleShape2D_x2q2d")
-
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
-position = Vector2(2.27374e-13, 5.96046e-08)
-scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_4flbx")
 
 [node name="Label" type="Label" parent="."]
-visible = false
 offset_left = -30.0
 offset_top = -75.0
 offset_right = 29.0
@@ -29,10 +23,6 @@ offset_bottom = -52.0
 text = "Stocks: "
 
 [node name="Area2D" type="Area2D" parent="."]
-visible = false
 
 [node name="Collision" type="CollisionShape2D" parent="Area2D"]
-visible = false
-shape = SubResource("CircleShape2D_x2q2d")
-
-[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
+shape = SubResource("RectangleShape2D_4flbx")
