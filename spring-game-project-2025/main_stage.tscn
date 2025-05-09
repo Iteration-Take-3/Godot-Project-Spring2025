@@ -26,5 +26,6 @@ shape = SubResource("RectangleShape2D_4owyp")
 position = Vector2(519, 145)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(564, 288)
 stream = ExtResource("3_uwveg")
 bus = &"Music"

@@ -18,12 +18,12 @@ func _physics_process(delta: float) -> void:
 	if (velocity.y < gravity_cap):
 		velocity.y += gravity * delta
 	
-	if Input.is_action_pressed("D"):
+	if Input.is_action_pressed("Right"):
 		velocity.x += speed
-	if Input.is_action_pressed("A"):
+	if Input.is_action_pressed("Left"):
 		velocity.x -= speed
 	
-	if Input.is_action_just_pressed("W"):
+	if Input.is_action_just_pressed("Jump"):
 		if is_on_floor():
 			velocity.y = 0
 			velocity.y -= jump_height
@@ -32,7 +32,7 @@ func _physics_process(delta: float) -> void:
 			djump = false
 			velocity.y = 0
 			velocity.y -= jump_height
-	if Input.is_action_just_released("W") && velocity.y <= 0:
+	if Input.is_action_just_released("Jump") && velocity.y <= 0:
 		velocity.y -= velocity.y/2
 	
 	if stocks < 1:
