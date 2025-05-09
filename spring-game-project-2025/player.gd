@@ -27,16 +27,17 @@ func _physics_process(delta: float) -> void:
 			velocity.x -= speed;
 	
 	if Input.is_action_just_pressed("Jump"):
-		onledge = false;
 		gravity = 750;
 		if is_on_floor():
 			velocity.y = 0
 			velocity.y -= jump_height
 			djump = true
 		elif djump:
-			djump = false
+			if (not onledge):
+				djump = false
 			velocity.y = 0
 			velocity.y -= jump_height
+		onledge = false;
 	if Input.is_action_just_released("Jump") && velocity.y <= 0:
 		velocity.y -= velocity.y/2
 	
