@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://wnv0pgenighl"]
+
+[ext_resource type="Script" uid="uid://c1xpgn357sf1o" path="res://objects/scripts/fighters/player.gd" id="1_0sm4r"]
+
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+script = ExtResource("1_0sm4r")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -30.0
+offset_top = -99.0
+offset_right = 29.0
+offset_bottom = -76.0
+text = "Stocks: "

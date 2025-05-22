@@ -1,11 +1,11 @@
 [gd_scene load_steps=10 format=3 uid="uid://1da2fmhqu116"]
 
-[ext_resource type="Script" uid="uid://bnwoadkaci7oj" path="res://main_stage.gd" id="1_gh3nl"]
-[ext_resource type="PackedScene" uid="uid://wnv0pgenighl" path="res://player.tscn" id="1_lq8q1"]
-[ext_resource type="Script" uid="uid://brw5hec7jrk0p" path="res://ledge.gd" id="2_56n4c"]
-[ext_resource type="AudioStream" uid="uid://c0nd3hdih0p8e" path="res://soundtrack/MogueraTheme.ogg" id="3_uwveg"]
-[ext_resource type="AudioStream" uid="uid://wod1he3xp1mq" path="res://soundtrack/GezoraTheme.ogg" id="4_uwveg"]
-[ext_resource type="Script" uid="uid://byc5jpsllo4nx" path="res://blast_zone.gd" id="6_wl8gn"]
+[ext_resource type="Script" uid="uid://bnwoadkaci7oj" path="res://main_stage.gd" id="1_djkgi"]
+[ext_resource type="Script" uid="uid://brw5hec7jrk0p" path="res://objects/scripts/ledge.gd" id="2_1kogc"]
+[ext_resource type="PackedScene" uid="uid://dn05tohiatnjy" path="res://objects/fighters/dism.tscn" id="3_djkgi"]
+[ext_resource type="AudioStream" uid="uid://c0nd3hdih0p8e" path="res://soundtrack/MogueraTheme.ogg" id="4_dgfnw"]
+[ext_resource type="AudioStream" uid="uid://wod1he3xp1mq" path="res://soundtrack/GezoraTheme.ogg" id="5_itqi2"]
+[ext_resource type="Script" uid="uid://byc5jpsllo4nx" path="res://objects/scripts/blast_zone.gd" id="6_5tv1a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4owyp"]
 size = Vector2(546, 108)
@@ -17,7 +17,7 @@ size = Vector2(28, 20)
 size = Vector2(1835, 1206)
 
 [node name="Main Stage" type="Node2D"]
-script = ExtResource("1_gh3nl")
+script = ExtResource("1_djkgi")
 
 [node name="Stage" type="Node2D" parent="."]
 
@@ -33,34 +33,33 @@ position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_4owyp")
 
 [node name="Area2D" type="Area2D" parent="Stage/Ground"]
-script = ExtResource("2_56n4c")
+script = ExtResource("2_1kogc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stage/Ground/Area2D"]
 position = Vector2(-267, -43)
 shape = SubResource("RectangleShape2D_wl8gn")
 
 [node name="Area2D2" type="Area2D" parent="Stage/Ground"]
-script = ExtResource("2_56n4c")
+script = ExtResource("2_1kogc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stage/Ground/Area2D2"]
 position = Vector2(266, -43)
 shape = SubResource("RectangleShape2D_wl8gn")
 
-[node name="Player" parent="." instance=ExtResource("1_lq8q1")]
-position = Vector2(519, 145)
+[node name="Player" parent="." instance=ExtResource("3_djkgi")]
 
 [node name="MainTrack" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(564, 288)
-stream = ExtResource("3_uwveg")
+stream = ExtResource("4_dgfnw")
 bus = &"Music"
 
 [node name="AltTrack" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(564, 288)
-stream = ExtResource("4_uwveg")
+stream = ExtResource("5_itqi2")
 bus = &"Music"
 
 [node name="Area2D" type="Area2D" parent="."]
-script = ExtResource("6_wl8gn")
+script = ExtResource("6_5tv1a")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(570.5, 317)
