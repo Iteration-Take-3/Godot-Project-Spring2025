@@ -5,15 +5,23 @@ var gravity = 750
 var jump_height = 500
 var gravity_cap = 1250
 
-var stocks = 3
-var djump = true;
+var stocks = 3;
+var maxjumps = 1;
+var jumps = maxjumps;
 var onledge = false;
+var atk_timer = 0;
 
 func _ready() -> void:
 	$Label.text = "Stocks: " + str(stocks)
 
 
 func _physics_process(delta: float) -> void:
+	
+	if atk_timer > 0:
+		attack_handler();
+	
+	if Input.is_action_just_pressed("Attack") && is_on_floor():
+		attack();
 	
 	velocity.x = 0
 	if (velocity.y < gravity_cap):
@@ -31,10 +39,10 @@ func _physics_process(delta: float) -> void:
 		if is_on_floor():
 			velocity.y = 0
 			velocity.y -= jump_height
-			djump = true
-		elif djump:
+			jumps = maxjumps
+		elif jumps > 0:
 			if (not onledge):
-				djump = false
+				jumps -= 1;
 			velocity.y = 0
 			velocity.y -= jump_height
 		onledge = false;
@@ -51,12 +59,22 @@ func _physics_process(delta: float) -> void:
 		
 	move_and_slide()
 
-
+func jumpset():
+	jumps = maxjumps;
+	
 func die():
+	print("You are dead")
 	velocity.y = 0
 	stocks -= 1
 	$Label.text = "Stocks: " + str(stocks)
 	position = Vector2(520,145)
-	djump = true
-	
-	
+	jumps = maxjumps
+
+func attack():
+	pass
+
+func attack_handler():
+	pass
+
+func reset():
+	pass
