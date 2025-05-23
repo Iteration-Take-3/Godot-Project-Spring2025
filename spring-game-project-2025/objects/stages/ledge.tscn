@@ -2,15 +2,16 @@
 
 [ext_resource type="Script" uid="uid://brw5hec7jrk0p" path="res://objects/scripts/ledge.gd" id="1_44ug1"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_uervt"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_44ug1"]
 size = Vector2(28, 20)
 
 [node name="Ledge" type="Node2D"]
 
-[node name="Area2D2" type="Area2D" parent="."]
+[node name="Ledge" type="Area2D" parent="."]
 script = ExtResource("1_44ug1")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
-shape = SubResource("RectangleShape2D_uervt")
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Ledge"]
+shape = SubResource("RectangleShape2D_44ug1")
 
-[connection signal="area_entered" from="Area2D2" to="Area2D2" method="_on_area_entered"]
+[connection signal="body_entered" from="Ledge" to="Ledge" method="_on_body_entered"]
+[connection signal="body_exited" from="Ledge" to="Ledge" method="_on_body_exited"]

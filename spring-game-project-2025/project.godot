@@ -12,8 +12,14 @@ config_version=5
 
 config/name="Spring Game Project 2025"
 run/main_scene="res://scenes/stages/main_stage.tscn"
-config/features=PackedStringArray("4.3", "Mobile")
+config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
+<<<<<<<Updatedupstreamrun/main_scene="uid://ccehww8gd1e5r"
+<<<<<<<HEADrun/main_scene="res://scenes/stages/main_stage.tscn"
+
+[autoload]
+
+Test="*res://scenes/stages/test.tscn"
 
 [global_group]
 

@@ -4,34 +4,34 @@
 [ext_resource type="Texture2D" uid="uid://cgfewmx67pge4" path="res://images/stages/caseoh/case_ground.png" id="2_jufkh"]
 [ext_resource type="PackedScene" uid="uid://dyin2eabn37ey" path="res://objects/stages/ledge.tscn" id="3_xaxsv"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_senjr"]
-size = Vector2(1806, 1153)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_voj6e"]
 size = Vector2(597, 230)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_senjr"]
+size = Vector2(1806, 1153)
+
 [node name="Main Stage" instance=ExtResource("1_h5oum")]
+
+[node name="Stage" type="Node2D" parent="." index="0"]
+
+[node name="Ground" type="StaticBody2D" parent="Stage" index="0"]
+position = Vector2(557, 526)
+
+[node name="Sprite2D" type="Sprite2D" parent="Stage/Ground" index="0"]
+position = Vector2(-19, 71)
+scale = Vector2(1, -0.902721)
+texture = ExtResource("2_jufkh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stage/Ground" index="1"]
+position = Vector2(1.5, -43)
+shape = SubResource("RectangleShape2D_voj6e")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D" index="0"]
 position = Vector2(575, 325)
 shape = SubResource("RectangleShape2D_senjr")
 
-[node name="Stage" type="Node2D" parent="Area2D" index="1"]
-
-[node name="Ground" type="StaticBody2D" parent="Area2D/Stage" index="0"]
-position = Vector2(557, 526)
-
-[node name="Sprite2D" type="Sprite2D" parent="Area2D/Stage/Ground" index="0"]
-position = Vector2(-19, 71)
-scale = Vector2(1, -0.902721)
-texture = ExtResource("2_jufkh")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D/Stage/Ground" index="1"]
-position = Vector2(1.5, -43)
-shape = SubResource("RectangleShape2D_voj6e")
-
-[node name="Ledge" parent="." index="2" instance=ExtResource("3_xaxsv")]
+[node name="Ledge" parent="." index="3" instance=ExtResource("3_xaxsv")]
 position = Vector2(266, 384)
 
-[node name="Ledge2" parent="." index="3" instance=ExtResource("3_xaxsv")]
+[node name="Ledge2" parent="." index="4" instance=ExtResource("3_xaxsv")]
 position = Vector2(850, 384)

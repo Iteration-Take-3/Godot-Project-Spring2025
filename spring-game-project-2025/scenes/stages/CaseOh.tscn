@@ -22,16 +22,16 @@ position = Vector2(579, 411)
 scale = Vector2(1.14762, 1.14762)
 texture = ExtResource("2_67sja")
 
-[node name="Stage" type="Node2D" parent="." index="2"]
+[node name="Stage2" type="Node2D" parent="." index="2"]
 
-[node name="Ground" type="StaticBody2D" parent="Stage" index="0"]
+[node name="Ground" type="StaticBody2D" parent="Stage2" index="0"]
 position = Vector2(557, 526)
 
-[node name="Sprite2D" type="Sprite2D" parent="Stage/Ground" index="0"]
+[node name="Sprite2D" type="Sprite2D" parent="Stage2/Ground" index="0"]
 position = Vector2(-16, -161)
 texture = ExtResource("3_iod78")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Stage/Ground" index="1"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Stage2/Ground" index="1"]
 polygon = PackedVector2Array(-294, 92, -294, -123, -293, -129, -286, -144, -278, -152, -269, -158, -254, -162, 263, -162, 272, -160, 282, -155, 291, -148, 299, -135, 303, -122, 303, 93)
 
 [node name="MainTrack" type="AudioStreamPlayer2D" parent="." index="3"]
