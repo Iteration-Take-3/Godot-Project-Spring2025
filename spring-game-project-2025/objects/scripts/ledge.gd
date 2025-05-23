@@ -27,13 +27,20 @@ func _on_area_entered(area: Area2D) -> void:
 			area.get_parent().velocity.y = 0;
 			area.get_parent().jumpset();
 			area.get_parent().onledge = true;
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 			await Input.is_anything_pressed()
 			
 
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 func _on_body_exited(body: Node2D) -> void:
+=======
+func _on_area_exited(area: Area2D) -> void:
+>>>>>>> Stashed changes
 =======
 func _on_area_exited(area: Area2D) -> void:
 >>>>>>> Stashed changes
