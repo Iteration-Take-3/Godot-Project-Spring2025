@@ -16,6 +16,8 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
+	if stocks < 1:
+		get_tree().change_scene_to_file("res://scenes/debug_stages.tscn");
 	
 	if atk_timer > 0:
 		attack_handler();
@@ -49,8 +51,6 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_released("Jump") && velocity.y <= 0:
 		velocity.y -= velocity.y/2
 	
-	if stocks < 1:
-		get_tree().quit()
 		
 	if Input.is_action_just_pressed("Down") && not is_on_floor():
 		onledge = false;
