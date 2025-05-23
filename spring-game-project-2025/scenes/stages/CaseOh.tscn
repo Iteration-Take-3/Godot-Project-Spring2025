@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dtvvaiqrloewh"]
+[gd_scene load_steps=9 format=3 uid="uid://dtvvaiqrloewh"]
 
 [ext_resource type="PackedScene" uid="uid://1da2fmhqu116" path="res://scenes/stages/main_stage.tscn" id="1_47nd1"]
 [ext_resource type="Texture2D" uid="uid://bw5jn7j0tvpfd" path="res://images/stages/caseoh/case_bg.png" id="2_67sja"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cgfewmx67pge4" path="res://images/stages/caseoh/case_ground.png" id="3_iod78"]
 [ext_resource type="AudioStream" uid="uid://c0nd3hdih0p8e" path="res://soundtrack/MogueraTheme.ogg" id="4_67sja"]
 [ext_resource type="AudioStream" uid="uid://wod1he3xp1mq" path="res://soundtrack/GezoraTheme.ogg" id="5_iod78"]
+[ext_resource type="PackedScene" uid="uid://dn05tohiatnjy" path="res://objects/fighters/dism.tscn" id="7_67sja"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yw3c5"]
 size = Vector2(1806, 1153)
@@ -43,3 +44,6 @@ bus = &"Music"
 position = Vector2(564, 288)
 stream = ExtResource("5_iod78")
 bus = &"Music"
+
+[node name="Player2" parent="." index="5" instance=ExtResource("7_67sja")]
+position = Vector2(568, 288)
