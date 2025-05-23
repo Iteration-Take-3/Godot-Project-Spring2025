@@ -1,81 +1,13 @@
 [gd_scene load_steps=4 format=3 uid="uid://1da2fmhqu116"]
 
-<<<<<<< Updated upstream
 [ext_resource type="Script" uid="uid://bnwoadkaci7oj" path="res://scenes/scripts/stages/main_stage.gd" id="1_djkgi"]
 [ext_resource type="PackedScene" uid="uid://be373edvugb5g" path="res://objects/stages/blast_zone.tscn" id="2_sdv0w"]
 [ext_resource type="PackedScene" uid="uid://dn05tohiatnjy" path="res://objects/fighters/dism.tscn" id="3_djkgi"]
-=======
-[ext_resource type="Script" path="res://main_stage.gd" id="1_djkgi"]
-[ext_resource type="Script" path="res://objects/scripts/ledge.gd" id="2_1kogc"]
-[ext_resource type="PackedScene" uid="uid://dn05tohiatnjy" path="res://objects/fighters/dism.tscn" id="3_djkgi"]
-[ext_resource type="AudioStream" uid="uid://c0nd3hdih0p8e" path="res://soundtrack/MogueraTheme.ogg" id="4_dgfnw"]
-[ext_resource type="AudioStream" uid="uid://wod1he3xp1mq" path="res://soundtrack/GezoraTheme.ogg" id="5_itqi2"]
-[ext_resource type="Script" path="res://objects/scripts/blast_zone.gd" id="6_5tv1a"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4owyp"]
-size = Vector2(546, 108)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wl8gn"]
-size = Vector2(28, 20)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_unngw"]
-size = Vector2(1835, 1206)
->>>>>>> Stashed changes
-
-[node name="Main Stage" type="Node2D"]
+[node name="Main Stage2" type="Node2D"]
 script = ExtResource("1_djkgi")
 
-<<<<<<< Updated upstream
 [node name="Area2D" parent="." instance=ExtResource("2_sdv0w")]
 
 [node name="Player" parent="." instance=ExtResource("3_djkgi")]
 position = Vector2(557, 266)
-=======
-[node name="Stage" type="Node2D" parent="."]
-
-[node name="Ground" type="StaticBody2D" parent="Stage"]
-position = Vector2(557, 526)
-
-[node name="Polygon2D" type="Polygon2D" parent="Stage/Ground"]
-position = Vector2(-447, -185)
-polygon = PackedVector2Array(174, 132, 174, 240, 174, 240, 720, 240, 720, 240, 720, 132, 719, 132)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Stage/Ground"]
-position = Vector2(0, 1)
-shape = SubResource("RectangleShape2D_4owyp")
-
-[node name="Ledge" type="Area2D" parent="Stage/Ground"]
-script = ExtResource("2_1kogc")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Stage/Ground/Ledge"]
-position = Vector2(260, -38)
-shape = SubResource("RectangleShape2D_wl8gn")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Stage/Ground/Ledge"]
-position = Vector2(-260, -38)
-shape = SubResource("RectangleShape2D_wl8gn")
-
-[node name="Area2D" type="Area2D" parent="."]
-script = ExtResource("6_5tv1a")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(570.5, 317)
-shape = SubResource("RectangleShape2D_unngw")
-
-[node name="Player" parent="." instance=ExtResource("3_djkgi")]
-position = Vector2(557, 346)
-
-[node name="MainTrack" type="AudioStreamPlayer2D" parent="."]
-position = Vector2(564, 288)
-stream = ExtResource("4_dgfnw")
-bus = &"Music"
-
-[node name="AltTrack" type="AudioStreamPlayer2D" parent="."]
-position = Vector2(564, 288)
-stream = ExtResource("5_itqi2")
-bus = &"Music"
-
-[connection signal="area_entered" from="Stage/Ground/Ledge" to="Stage/Ground/Ledge" method="_on_area_entered"]
-[connection signal="area_exited" from="Stage/Ground/Ledge" to="Stage/Ground/Ledge" method="_on_area_exited"]
-[connection signal="area_exited" from="Area2D" to="Area2D" method="_on_area_exited"]
->>>>>>> Stashed changes

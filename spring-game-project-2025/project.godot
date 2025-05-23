@@ -11,14 +11,10 @@ config_version=5
 [application]
 
 config/name="Spring Game Project 2025"
-<<<<<<< Updated upstream
 run/main_scene="uid://ccehww8gd1e5r"
 config/features=PackedStringArray("4.4", "Mobile")
-=======
-run/main_scene="res://scenes/stages/main_stage.tscn"
-config/features=PackedStringArray("4.3", "Mobile")
->>>>>>> Stashed changes
 config/icon="res://icon.svg"
+<<<<<<<Updatedupstreamrun/main_scene="uid://ccehww8gd1e5r"
 
 [global_group]
 
