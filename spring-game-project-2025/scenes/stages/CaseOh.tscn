@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://dtvvaiqrloewh"]
+
+[ext_resource type="PackedScene" uid="uid://1da2fmhqu116" path="res://scenes/stages/main_stage.tscn" id="1_47nd1"]
+[ext_resource type="Texture2D" uid="uid://bw5jn7j0tvpfd" path="res://images/stages/caseoh/case_bg.png" id="2_67sja"]
+[ext_resource type="Texture2D" uid="uid://cgfewmx67pge4" path="res://images/stages/caseoh/case_ground.png" id="3_iod78"]
+[ext_resource type="AudioStream" uid="uid://c0nd3hdih0p8e" path="res://soundtrack/MogueraTheme.ogg" id="4_67sja"]
+[ext_resource type="AudioStream" uid="uid://wod1he3xp1mq" path="res://soundtrack/GezoraTheme.ogg" id="5_iod78"]
+
+[node name="Main Stage" instance=ExtResource("1_47nd1")]
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="1"]
+position = Vector2(579, 378)
+scale = Vector2(1.14762, 1.14762)
+texture = ExtResource("2_67sja")
+
+[node name="Stage" type="Node2D" parent="." index="2"]
+
+[node name="Ground" type="StaticBody2D" parent="Stage" index="0"]
+position = Vector2(557, 526)
+
+[node name="Sprite2D" type="Sprite2D" parent="Stage/Ground" index="0"]
+position = Vector2(-16, -161)
+texture = ExtResource("3_iod78")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Stage/Ground" index="1"]
+polygon = PackedVector2Array(-294, 92, -294, -123, -293, -129, -286, -144, -278, -152, -269, -158, -254, -162, 263, -162, 272, -160, 282, -155, 291, -148, 299, -135, 303, -122, 303, 93)
+
+[node name="MainTrack" type="AudioStreamPlayer2D" parent="." index="3"]
+position = Vector2(564, 288)
+stream = ExtResource("4_67sja")
+bus = &"Music"
+
+[node name="AltTrack" type="AudioStreamPlayer2D" parent="." index="4"]
+position = Vector2(564, 288)
+stream = ExtResource("5_iod78")
+bus = &"Music"
