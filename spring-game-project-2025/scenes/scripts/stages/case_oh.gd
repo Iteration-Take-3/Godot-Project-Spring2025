@@ -1,6 +1,6 @@
-extends Node2D
+extends "res://scenes/scripts/stages/main_stage.gd"
 
-func _ready():
+func music():
 	var rng = RandomNumberGenerator.new();
 	var thing = rng.randf_range(0.00, 10.00);
 	print(thing);
