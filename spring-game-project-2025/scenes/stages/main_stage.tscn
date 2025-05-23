@@ -10,4 +10,4 @@ script = ExtResource("1_djkgi")
 [node name="Area2D" parent="." instance=ExtResource("2_sdv0w")]
 
 [node name="Player" parent="." instance=ExtResource("3_djkgi")]
-position = Vector2(557, 346)
+position = Vector2(557, 266)
