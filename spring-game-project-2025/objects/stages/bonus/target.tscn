@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bqfxmwilm8x2f"]
+
+[ext_resource type="Texture2D" uid="uid://ceg35lov7kkiq" path="res://images/stages/bonus/targetholder.png" id="1_vtj4s"]
+[ext_resource type="Script" uid="uid://la7yjrxv4nf7" path="res://objects/scripts/stages/bonus/target.gd" id="1_wv0qo"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vtj4s"]
+radius = 30.0
+
+[node name="Target" type="Node2D"]
+script = ExtResource("1_wv0qo")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(9.53674e-07, 9.53674e-07)
+scale = Vector2(0.193056, 0.193056)
+texture = ExtResource("1_vtj4s")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_vtj4s")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

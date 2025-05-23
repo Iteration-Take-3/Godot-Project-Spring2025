@@ -13,7 +13,7 @@ func attack():
 	$"Left Hand".remove_from_group("hurtbox")
 	$"Right Hand".add_to_group("hitbox")
 	$"Right Hand".remove_from_group("hurtbox")
-	atk_timer = 3;
+	atk_timer = 10;
 
 func attack_handler():
 	atk_timer -= 1;

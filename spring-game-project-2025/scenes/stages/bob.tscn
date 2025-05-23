@@ -1,0 +1,58 @@
+[gd_scene load_steps=10 format=3 uid="uid://u51vrqo0jts4"]
+
+[ext_resource type="PackedScene" uid="uid://1da2fmhqu116" path="res://scenes/stages/main_stage.tscn" id="1_ii1iq"]
+[ext_resource type="Texture2D" uid="uid://da5m4gkipnew3" path="res://images/stages/bob/bob_bg.png" id="2_1qfi7"]
+[ext_resource type="Texture2D" uid="uid://d33evqwb87mx1" path="res://images/stages/bob/bob_ground.png" id="3_et5h8"]
+[ext_resource type="AudioStream" uid="uid://c0nd3hdih0p8e" path="res://soundtrack/MogueraTheme.ogg" id="4_ajb6j"]
+[ext_resource type="AudioStream" uid="uid://wod1he3xp1mq" path="res://soundtrack/GezoraTheme.ogg" id="5_xhxri"]
+[ext_resource type="PackedScene" uid="uid://dn05tohiatnjy" path="res://objects/fighters/dism.tscn" id="6_8xr1b"]
+[ext_resource type="PackedScene" uid="uid://dyin2eabn37ey" path="res://objects/stages/ledge.tscn" id="7_1qfi7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1cm6o"]
+size = Vector2(1806, 1153)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rlnnl"]
+size = Vector2(838, 598)
+
+[node name="Main Stage" instance=ExtResource("1_ii1iq")]
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="0"]
+position = Vector2(579, 355)
+scale = Vector2(1.14762, 1.14762)
+texture = ExtResource("2_1qfi7")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(638, 394)
+shape = SubResource("RectangleShape2D_1cm6o")
+
+[node name="Stage2" type="Node2D" parent="." index="2"]
+
+[node name="Ground" type="StaticBody2D" parent="Stage2" index="0"]
+position = Vector2(557, 526)
+
+[node name="Sprite2D" type="Sprite2D" parent="Stage2/Ground" index="0"]
+position = Vector2(-16, -161)
+texture = ExtResource("3_et5h8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stage2/Ground" index="1"]
+position = Vector2(-10, 200)
+shape = SubResource("RectangleShape2D_rlnnl")
+
+[node name="MainTrack" type="AudioStreamPlayer2D" parent="." index="3"]
+position = Vector2(564, 288)
+stream = ExtResource("4_ajb6j")
+bus = &"Music"
+
+[node name="AltTrack" type="AudioStreamPlayer2D" parent="." index="4"]
+position = Vector2(564, 288)
+stream = ExtResource("5_xhxri")
+bus = &"Music"
+
+[node name="Player2" parent="." index="5" instance=ExtResource("6_8xr1b")]
+position = Vector2(568, 288)
+
+[node name="Ledge2" parent="." index="6" instance=ExtResource("7_1qfi7")]
+position = Vector2(957, 443)
+
+[node name="Ledge" parent="." index="7" instance=ExtResource("7_1qfi7")]
+position = Vector2(136, 443)

@@ -11,15 +11,11 @@ config_version=5
 [application]
 
 config/name="Crossover Clash"
-run/main_scene="res://scenes/stages/main_stage.tscn"
+run/main_scene="uid://u51vrqo0jts4"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 <<<<<<<Updatedupstreamrun/main_scene="uid://ccehww8gd1e5r"
 <<<<<<<HEADrun/main_scene="res://scenes/stages/main_stage.tscn"
-
-[autoload]
-
-Test="*res://scenes/stages/test.tscn"
 
 [global_group]
 

@@ -20,7 +20,7 @@ func _physics_process(delta: float) -> void:
 	if atk_timer > 0:
 		attack_handler();
 	
-	if Input.is_action_just_pressed("Attack") && is_on_floor():
+	if Input.is_action_just_pressed("Attack") && atk_timer == 0:
 		attack();
 	
 	velocity.x = 0
