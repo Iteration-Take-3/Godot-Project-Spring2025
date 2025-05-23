@@ -31,7 +31,7 @@ position = Vector2(1.5, -43)
 shape = SubResource("RectangleShape2D_voj6e")
 
 [node name="Ledge" parent="." index="2" instance=ExtResource("3_xaxsv")]
-position = Vector2(265, 378)
+position = Vector2(266, 384)
 
 [node name="Ledge2" parent="." index="3" instance=ExtResource("3_xaxsv")]
-position = Vector2(851, 378)
+position = Vector2(850, 384)

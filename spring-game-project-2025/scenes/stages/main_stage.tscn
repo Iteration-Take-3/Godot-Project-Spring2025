@@ -1,5 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://1da2fmhqu116"]
 
+<<<<<<< HEAD
 [ext_resource type="Script" path="res://main_stage.gd" id="1_djkgi"]
 [ext_resource type="Script" path="res://objects/scripts/ledge.gd" id="2_1kogc"]
 [ext_resource type="PackedScene" uid="uid://dn05tohiatnjy" path="res://objects/fighters/dism.tscn" id="3_djkgi"]
@@ -76,3 +77,16 @@ bus = &"Music"
 [connection signal="area_exited" from="Stage/Ground/Ledge" to="Stage/Ground/Ledge" method="_on_area_exited"]
 >>>>>>> Stashed changes
 [connection signal="area_exited" from="Area2D" to="Area2D" method="_on_area_exited"]
+=======
+[ext_resource type="Script" uid="uid://bnwoadkaci7oj" path="res://scenes/scripts/stages/main_stage.gd" id="1_djkgi"]
+[ext_resource type="PackedScene" uid="uid://be373edvugb5g" path="res://objects/stages/blast_zone.tscn" id="2_sdv0w"]
+[ext_resource type="PackedScene" uid="uid://dn05tohiatnjy" path="res://objects/fighters/dism.tscn" id="3_djkgi"]
+
+[node name="Main Stage2" type="Node2D"]
+script = ExtResource("1_djkgi")
+
+[node name="Area2D" parent="." instance=ExtResource("2_sdv0w")]
+
+[node name="Player" parent="." instance=ExtResource("3_djkgi")]
+position = Vector2(557, 266)
+>>>>>>> 8c8c9813aa8839607cd95e24290f20371a8960fd
