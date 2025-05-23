@@ -11,15 +11,9 @@ config_version=5
 [application]
 
 config/name="Spring Game Project 2025"
-<<<<<<< HEAD
 run/main_scene="res://scenes/stages/main_stage.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
-=======
-run/main_scene="uid://ccehww8gd1e5r"
-config/features=PackedStringArray("4.4", "Mobile")
->>>>>>> 8c8c9813aa8839607cd95e24290f20371a8960fd
 config/icon="res://icon.svg"
-<<<<<<<Updatedupstreamrun/main_scene="uid://ccehww8gd1e5r"
 
 [global_group]
 
