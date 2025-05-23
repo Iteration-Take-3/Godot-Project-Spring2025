@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://ccehww8gd1e5r"]
+[gd_scene load_steps=9 format=3 uid="uid://ccehww8gd1e5r"]
 
 [ext_resource type="PackedScene" uid="uid://1da2fmhqu116" path="res://scenes/stages/main_stage.tscn" id="1_h5oum"]
 [ext_resource type="Texture2D" uid="uid://cgfewmx67pge4" path="res://images/stages/caseoh/case_ground.png" id="2_jufkh"]
 [ext_resource type="PackedScene" uid="uid://dyin2eabn37ey" path="res://objects/stages/ledge.tscn" id="3_xaxsv"]
 [ext_resource type="PackedScene" uid="uid://dn05tohiatnjy" path="res://objects/fighters/dism.tscn" id="4_jufkh"]
+[ext_resource type="PackedScene" uid="uid://n8lticemk6lm" path="res://objects/fighters/aidism.tscn" id="5_senjr"]
 [ext_resource type="PackedScene" uid="uid://bqfxmwilm8x2f" path="res://objects/stages/bonus/target.tscn" id="5_xaxsv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_voj6e"]
@@ -38,8 +39,11 @@ position = Vector2(266, 384)
 [node name="Ledge2" parent="." index="3" instance=ExtResource("3_xaxsv")]
 position = Vector2(850, 384)
 
-[node name="Player2" parent="." index="4" instance=ExtResource("4_jufkh")]
+[node name="dism" parent="." index="4" instance=ExtResource("4_jufkh")]
 position = Vector2(536, 216)
 
-[node name="Target" parent="." index="5" instance=ExtResource("5_xaxsv")]
+[node name="aidism" parent="." index="5" instance=ExtResource("5_senjr")]
+position = Vector2(344, 224)
+
+[node name="Target" parent="." index="6" instance=ExtResource("5_xaxsv")]
 position = Vector2(818, 282)
