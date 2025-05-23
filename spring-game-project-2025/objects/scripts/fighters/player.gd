@@ -1,10 +1,15 @@
 extends CharacterBody2D
 
-var speed = 500
+var speed = 100
 var gravity = 750
 var jump_height = 500
 var gravity_cap = 1250
+var weight = 150
+var friction = 150;
 
+var dealing = 0;
+var launching = Vector2(0,0);
+var damage = 0;
 var stocks = 3;
 var maxjumps = 1;
 var jumps = maxjumps;
@@ -25,16 +30,20 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("Attack") && atk_timer == 0:
 		attack();
 	
-	velocity.x = 0
 	if (velocity.y < gravity_cap):
 		velocity.y += gravity * delta
 	
 	if Input.is_action_pressed("Right"):
 		if (not onledge):
-			velocity.x += speed
-	if Input.is_action_pressed("Left"):
+			velocity.x = speed
+	elif Input.is_action_pressed("Left"):
 		if (not onledge):
-			velocity.x -= speed;
+			velocity.x = -speed;
+	else:
+		if velocity.x > 0:
+			velocity.x -= friction/velocity.x
+		if velocity.x < 0:
+			velocity.x += (-friction)/velocity.x
 	
 	if Input.is_action_just_pressed("Jump"):
 		gravity = 750;
@@ -59,6 +68,11 @@ func _physics_process(delta: float) -> void:
 		
 	move_and_slide()
 
+func just_hit(launch, taken):
+	velocity.x = (launch.x - weight) * (1 + (damage / 10));
+	velocity.y = (launch.y - weight) * (1 + (damage / 10));
+	damage += taken;
+
 func jumpset():
 	jumps = maxjumps;
 	
@@ -78,3 +92,8 @@ func attack_handler():
 
 func reset():
 	pass
+
+func _on_hurtbox_area_entered(area: Area2D) -> void:
+	if (area.is_in_group("hitbox")):
+		print("attacked at " + str(damage) + "% damage!")
+		just_hit(area.get_parent().launching, area.get_parent().dealing);

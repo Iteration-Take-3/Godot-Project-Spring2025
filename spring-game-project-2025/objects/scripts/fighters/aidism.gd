@@ -7,8 +7,6 @@ func _physics_process(delta: float) -> void:
 	if atk_timer > 0:
 		attack_handler();
 	
-	
-	velocity.x = 0
 	if (velocity.y < gravity_cap):
 		velocity.y += gravity * delta
 		
