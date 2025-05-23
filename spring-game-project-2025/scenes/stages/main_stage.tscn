@@ -64,8 +64,13 @@ stream = ExtResource("5_itqi2")
 bus = &"Music"
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 [connection signal="body_entered" from="Stage/Ground/Ledge" to="Stage/Ground/Ledge" method="_on_body_entered"]
 [connection signal="body_exited" from="Stage/Ground/Ledge" to="Stage/Ground/Ledge" method="_on_body_exited"]
+=======
+[connection signal="area_entered" from="Stage/Ground/Ledge" to="Stage/Ground/Ledge" method="_on_area_entered"]
+[connection signal="area_exited" from="Stage/Ground/Ledge" to="Stage/Ground/Ledge" method="_on_area_exited"]
+>>>>>>> Stashed changes
 =======
 [connection signal="area_entered" from="Stage/Ground/Ledge" to="Stage/Ground/Ledge" method="_on_area_entered"]
 [connection signal="area_exited" from="Stage/Ground/Ledge" to="Stage/Ground/Ledge" method="_on_area_exited"]
